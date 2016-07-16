@@ -1,5 +1,9 @@
 #Problem 5 (Ruby 1)
 
-25.times do
-	puts rand(0..10)
-end
+
+
+puts Array.new(10) { (rand(1..10)) }
+
+
+
+
