@@ -4,7 +4,7 @@ desired_weight = 0
 bells = []
 bar_weight = 45
 bell_weights = [45, 35, 25, 15, 10, 5]
-
+min_weight = 5
 
 
 
@@ -21,18 +21,19 @@ desired_weight = gets.chomp.to_i
 
 bells = desired_weight - bar_weight
 
-
 weight1 = bells / 2
 
 
 if weight1 % 5 != 0
-	weight1 = ((bells - 5) / 2)
-	weight2 = weight1 + 5
+	rounded_weight = desired_weight + min_weight
+	puts "That weight is not possible with our current configuration. Let me round that up to #{rounded_weight} for you."
+	weight1 = ((bells + min_weight) / 2)
+	weight2 = weight1
 else
 	weight2 = weight1
 end
 
 
-
-puts "Put #{weight1} lbs. on one side."
-puts "Put #{weight2} lbs. on the other side."
+puts "You will need (on each side):"
+puts "#{weight1} lbs."
+puts "#{weight2} lbs."
