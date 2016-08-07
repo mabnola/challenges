@@ -22,14 +22,17 @@ desired_weight = gets.chomp.to_i
 bells = desired_weight - bar_weight
 
 
-weight = bells / 2
+weight1 = bells / 2
 
-if weight % 5 != 0
-	weight = ((bells - 5) / 2)
-	weight2 = weight + 5
+
+if weight1 % 5 != 0
+	weight1 = ((bells - 5) / 2)
+	weight2 = weight1 + 5
+else
+	weight2 = weight1
 end
 
 
 
-puts "Put #{weight} lbs. on one side."
+puts "Put #{weight1} lbs. on one side."
 puts "Put #{weight2} lbs. on the other side."
